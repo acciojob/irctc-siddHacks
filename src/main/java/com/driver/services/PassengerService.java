@@ -2,9 +2,13 @@ package com.driver.services;
 
 
 import com.driver.model.Passenger;
+import com.driver.model.Ticket;
 import com.driver.repository.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PassengerService {
@@ -14,7 +18,10 @@ public class PassengerService {
 
     public Integer addPassenger(Passenger passenger){
         //Add the passenger Object in the passengerDb and return the passegnerId that has been returned
-        return null;
+
+        Passenger passenger1 = passengerRepository.save(passenger);
+        return passenger1.getPassengerId();
+
     }
 
 }
